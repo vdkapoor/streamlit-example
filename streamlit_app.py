@@ -54,7 +54,8 @@ def chart(stock):
                     open=stock_data['Open'],
                     high=stock_data['High'],
                     low=stock_data['Low'],
-                    close=stock_data['Close'])])
+                    close=stock_data['Close']
+                                        increasing_line_color= 'green', decreasing_line_color= 'red')])
     st.plotly_chart(fig,use_container_width=True)
     return 
 asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG','VHY']
