@@ -15,6 +15,12 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 
+import datetime
+import pytz
+
+india_timezone = pytz.timezone('Asia/Kolkata')
+india_time = datetime.datetime.now(india_timezone)
+print("The current time in India is:", india_time.strftime("%Y-%m-%d %H:%M:%S"))
 
 
 
@@ -33,7 +39,6 @@ def get_falling_stocks(asx_stocks):
 
 asx_20_stocks = ['AGVT', 'LNAS']
 falling_stocks = get_falling_stocks(asx_20_stocks)
-st.write(datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
 st.write(falling_stocks)
 
 
