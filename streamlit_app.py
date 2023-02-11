@@ -20,7 +20,7 @@ import pytz
 
 india_timezone = pytz.timezone('Asia/Kolkata')
 india_time = datetime.datetime.now(india_timezone)
-print("The current time in India is:", india_time.strftime("%Y-%m-%d %H:%M:%S"))
+st.write("The current time in India is:", india_time.strftime("%Y-%m-%d %H:%M:%S"))
 
 
 
