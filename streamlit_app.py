@@ -4,6 +4,9 @@ import datetime
 import plotly.express as px
 import plotly.graph_objs as go
 import pandas as pd
+import datetime
+import pytz
+import requests
 
 # Add a selectbox to the sidebar:
 add_selectbox = st.sidebar.selectbox(
@@ -11,9 +14,8 @@ add_selectbox = st.sidebar.selectbox(
     ('Email', 'Home phone', 'Mobile phone')
 )
 
-import requests
-import pandas as pd
 
+st.write(datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
 
 
 def get_falling_stocks(asx_stocks):
