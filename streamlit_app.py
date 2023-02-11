@@ -10,8 +10,8 @@ import requests
 
 # Add a selectbox to the sidebar:
 add_selectbox = st.sidebar.selectbox(
-    'How would you like to be contacted?',
-    ('Email', 'Home phone', 'Mobile phone')
+    'Frequency,
+    ('Daily', 'Weekly', 'Monthly)
 )
 
 
@@ -46,7 +46,7 @@ st.write(falling_stocks)
 
 
 def chart(stock):
-    stock_data = yf.Ticker(stock+".AX").history(period="2y",interval="1wk")
+    stock_data = yf.Ticker(stock+".AX").history(period="2y",interval="1m")
     
 
   
