@@ -57,6 +57,6 @@ def chart(stock):
                     close=stock_data['Close'])])
     st.plotly_chart(fig,use_container_width=True)
     return 
-asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG']
+asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG','VHY','VHG']
 for stock in asx_20_stocks:
   chart(stock)
