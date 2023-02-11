@@ -3,7 +3,7 @@ import yfinance as yf
 import datetime
 import plotly.express as px
 import plotly.graph_objs as go
-
+import pandas as pd
 
 # Add a selectbox to the sidebar:
 add_selectbox = st.sidebar.selectbox(
@@ -32,11 +32,6 @@ asx_20_stocks = ['AGVT', 'LNAS']
 falling_stocks = get_falling_stocks(asx_20_stocks)
 st.write(falling_stocks)
 
-
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objs as go
-import yfinance as yf
 
 
 
