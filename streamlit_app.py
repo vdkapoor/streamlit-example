@@ -12,8 +12,7 @@ import requests
 add_selectbox = st.sidebar.selectbox(
     'Frequency',
     ('Daily', 'Weekly', 'Monthly'))
-
-
+   
 import datetime
 import pytz
 india_timezone = pytz.timezone('Asia/Kolkata')
@@ -45,7 +44,7 @@ st.write(falling_stocks)
 
 
 def chart(stock):
-    stock_data = yf.Ticker(stock+".AX").history(period="2y",interval="1m")
+    stock_data = yf.Ticker(stock+".AX").history(period="2y",interval="1wk")
     
 
   
