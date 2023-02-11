@@ -54,7 +54,7 @@ def chart(stock):
                     high=stock_data['High'],
                     low=stock_data['Low'],
                     close=stock_data['Close'])])
-    st.plotly_chart(fig)
+    st.plotly_chart(fig,use_container_width=True)
     return 
 asx_20_stocks = ['LNAS', 'WAM','NST','MFF','CPU']
 for stock in asx_20_stocks:
