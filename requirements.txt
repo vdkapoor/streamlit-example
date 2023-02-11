@@ -2,4 +2,4 @@ altair
 pandas
 streamlit
 yfinance
-ploty
+plotly==4.9.0
