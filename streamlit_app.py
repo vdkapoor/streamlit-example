@@ -61,6 +61,6 @@ def chart(stock):
     )
     st.plotly_chart(fig,use_container_width=True)
     return 
-asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG','VHY']
+asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG','VHY','IOZ']
 for stock in asx_20_stocks:
   chart(stock)
