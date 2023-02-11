@@ -15,7 +15,7 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 
-st.write(datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
+
 
 
 def get_falling_stocks(asx_stocks):
@@ -30,8 +30,10 @@ def get_falling_stocks(asx_stocks):
                 falling_stocks.append(stock)
     return falling_stocks
 
+
 asx_20_stocks = ['AGVT', 'LNAS']
 falling_stocks = get_falling_stocks(asx_20_stocks)
+st.write(datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
 st.write(falling_stocks)
 
 
