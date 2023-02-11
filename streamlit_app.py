@@ -47,7 +47,7 @@ st.write(falling_stocks)
 
 def chart(stock):
     stock_data = yf.Ticker(stock+".AX").history(period="2y",interval="1wk")
-    st.header(stock+" ->"+    round(yf.Ticker(stock+".AX").history(period="1d",interval="1d")['Close'][0],2).astype('str'))
+    st.header(stock+"   ->   "+    round(yf.Ticker(stock+".AX").history(period="1d",interval="1d")['Close'][0],2).astype('str'))
 
   
     fig = go.Figure(data=[go.Candlestick(x=stock_data.index,
