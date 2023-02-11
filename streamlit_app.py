@@ -10,7 +10,7 @@ import requests
 
 # Add a selectbox to the sidebar:
 add_selectbox = st.sidebar.selectbox(
-    
+    'Frequency',
     ('Daily', 'Weekly', 'Monthly)
 )
 
