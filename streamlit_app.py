@@ -12,7 +12,7 @@ import requests
 add_selectbox = st.sidebar.selectbox(
     'Frequency',
     ('Daily', 'Weekly', 'Monthly'))
- st.snow() 
+st.snow() 
 import datetime
 import pytz
 india_timezone = pytz.timezone('Asia/Kolkata')
