@@ -47,7 +47,7 @@ st.write(falling_stocks)
 
 def chart(stock):
     stock_data = yf.Ticker(stock+".AX").history(period="2y",interval="1wk")
-    st.header(stock+"   ->   "+    round(yf.Ticker(stock+".AX").history(period="1d",interval="1d")['Close'][0],2).astype('str'))
+    
 
   
     fig = go.Figure(data=[go.Candlestick(x=stock_data.index,
@@ -56,6 +56,9 @@ def chart(stock):
                     low=stock_data['Low'],
                     close=stock_data['Close']
                                         ,increasing_line_color= 'green', decreasing_line_color= 'red')])
+    fig.update_layout(
+    title=stock+"   ->   "+    round(yf.Ticker(stock+".AX").history(period="1d",interval="1d")['Close'][0],2).astype('str')
+    )
     st.plotly_chart(fig,use_container_width=True)
     return 
 asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG','VHY']
