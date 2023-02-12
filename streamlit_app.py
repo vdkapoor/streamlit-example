@@ -44,7 +44,7 @@ st.write(falling_stocks)
 
 
 def chart(stock):
-    stock_data = yf.Ticker(stock+".AX").history(period="2y",interval="1wk")
+    stock_data = yf.Ticker(stock+".AX").history(period="5y",interval="1wk")
     
 
   
