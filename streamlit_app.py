@@ -12,6 +12,14 @@ import requests
 add_selectbox = st.sidebar.selectbox(
     'Frequency',
     ('Daily', 'Weekly', 'Monthly'))
+hist_int=""
+hist_prd=""
+if add_selectbox=='Monthly': 
+    hist_int="1mo" 
+    hist_prd="5y"
+else: 
+    hist_int="1wk" 
+    hist_prd="1y"
 
 import datetime
 import pytz
@@ -44,10 +52,7 @@ st.write(falling_stocks)
 
 
 def chart(stock):
-    stock_data = yf.Ticker(stock+".AX").history(period="1y",interval="1wk")
-    
-
-  
+    stock_data = yf.Ticker(stock+".AX").history(period=hist_prd,interval=hist_int)
     fig = go.Figure(data=[go.Candlestick(x=stock_data.index,
                     open=stock_data['Open'],
                     high=stock_data['High'],
@@ -55,11 +60,12 @@ def chart(stock):
                     close=stock_data['Close']
                                         ,increasing_line_color= 'green', decreasing_line_color= 'red')])
     fig.update_layout(
-    title=stock+"   ->   "+    round(yf.Ticker(stock+".AX").history(period="1d",interval="1d")['Close'][0],2).astype('str')
-    )
+    title=stock+"   ->   "+    round(yf.Ticker(stock+".AX").history(period="1d",interval="1d")['Close'][0],2).astype('str'))
+    
     st.plotly_chart(fig,use_container_width=True)
     return 
-asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG','VHY','IOZ']
+asx_20_stocks = ['LNAS','LSF', 'WAM','NST','MFF','CPU','WOW','BHP','AKE','ARG','VHY','IOZ','ROBO','HACK']
 for stock in asx_20_stocks:
-  chart(stock)
-  st.write('-----------------------------------')
+    st.write(yf.Ticker(stock+".AX").info['longName'])
+    chart(stock)
+    st.write('-----------------------------------')
